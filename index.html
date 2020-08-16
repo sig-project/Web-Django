@@ -1,0 +1,79 @@
+<!-- C\Code\mysite\elections\template\elections\index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>키워드 음악추천</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<style>
+			.title {
+				font-size: 30px;
+				text-align: center;
+				margin-top: 20px;
+			}
+			.main {
+				width: 800px;
+				margin: 0 auto;
+			}
+			.search {
+				display: flex;
+			}
+			.keyword {
+				width: 750px;
+				height: 30px;
+				border: 1px solid black;
+				margin-top: 20px;
+				margin-right: 5px;	
+				border-radius: 3px;
+			}
+			.button {
+				text-align: center;
+				font-size: 15px;
+				width: 50px;
+				height: 30px;
+				margin-top: 20px;
+				border-radius: 3px;
+			}
+			.container {
+				width: 800px;
+				height: 400px;
+				border: 1px solid black;
+				margin-top: 20px;
+				border-radius: 3px;
+			}
+		</style>
+</head>
+<body>
+<div class="title">
+	키워드 음악 추천
+</div>
+<div class="main">
+	<div class="search">
+		<div class="keyword">
+		키워드를 입력하세요.
+		</div>
+		<button class="search button">
+		검색
+		</button>
+	</div>
+<div class="container">
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <td><B>이름</B></td>
+            <td><B>가수</B></td>
+        </tr>
+        </thead>
+        <tbody>
+        {% for song in songs %}
+        <tr>
+            <td> {{ song.title }} </td>
+            <td> {{ song.singer }} </td>
+        </tr>
+        {% endfor %}
+        <tbody>
+    </table>
+</body>
